@@ -1,0 +1,90 @@
+{
+  "info": {
+    "name": "Sistema Automotivo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Criar marca",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nome\":\"Toyota\"}"
+        },
+        "url": "http://localhost:8080/api/marcas"
+      }
+    },
+    {
+      "name": "Criar modelo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nome\":\"Corolla\",\"marcaId\":1}"
+        },
+        "url": "http://localhost:8080/api/modelos"
+      }
+    },
+    {
+      "name": "Criar veículo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"modeloId\":1,\"ano\":2022,\"cor\":\"Prata\",\"preco\":115000.00,\"quilometragem\":35000,\"status\":\"DISPONIVEL\"}"
+        },
+        "url": "http://localhost:8080/api/veiculos"
+      }
+    },
+    {
+      "name": "Listar e filtrar veículos",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/veiculos?marca=Toyota&status=DISPONIVEL"
+      }
+    },
+    {
+      "name": "Atualizar veículo",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"modeloId\":1,\"ano\":2022,\"cor\":\"Prata\",\"preco\":112000.00,\"quilometragem\":36000,\"status\":\"RESERVADO\"}"
+        },
+        "url": "http://localhost:8080/api/veiculos/1"
+      }
+    },
+    {
+      "name": "Excluir veículo",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/api/veiculos/1"
+      }
+    }
+  ]
+}
